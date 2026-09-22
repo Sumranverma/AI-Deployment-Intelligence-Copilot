@@ -1,0 +1,16 @@
+Deployment_ID,Region,Environment,Milestone,Deployment_Date,Overall_Status,Network_Readiness,Hardware_Readiness,Dependency_Status,Risk_Level,Blocker,Owner
+DEP-001,Central US,Production,Infrastructure Ready,2026-10-05,Ready,Ready,Ready,Completed,Low,None,Team A
+DEP-002,East US,Production,Network Validation,2026-10-08,At Risk,Pending,Ready,In Progress,Medium,Network validation pending,Team B
+DEP-003,West Europe,Production,Hardware Readiness,2026-10-10,Ready,Ready,Ready,Completed,Low,None,Team C
+DEP-004,North Europe,Production,Deployment Readiness,2026-10-12,Blocked,Ready,Pending,Blocked,High,Hardware dependency,Team A
+DEP-005,Central India,Production,Network Validation,2026-10-15,At Risk,Pending,Ready,In Progress,High,Network dependency,Team D
+DEP-006,South Central US,Production,Infrastructure Ready,2026-10-18,Ready,Ready,Ready,Completed,Low,None,Team B
+DEP-007,Japan East,Production,Deployment Readiness,2026-10-20,At Risk,Ready,Pending,In Progress,Medium,Hardware readiness delay,Team C
+DEP-008,Australia East,Production,Network Validation,2026-10-22,Ready,Ready,Ready,Completed,Low,None,Team D
+DEP-009,UK South,Production,Deployment Readiness,2026-10-25,Blocked,Pending,Ready,Blocked,High,Network dependency,Team A
+DEP-010,Canada Central,Production,Infrastructure Ready,2026-10-27,Ready,Ready,Ready,Completed,Low,None,Team B
+DEP-011,Central India,Production,Hardware Readiness,2026-10-29,At Risk,Ready,Pending,In Progress,Medium,Hardware validation pending,Team D
+DEP-012,West US 2,Production,Deployment Readiness,2026-11-01,Ready,Ready,Ready,Completed,Low,None,Team C
+DEP-013,East Asia,Production,Network Validation,2026-11-04,At Risk,Pending,Ready,In Progress,Medium,Network readiness pending,Team A
+DEP-014,France Central,Production,Infrastructure Ready,2026-11-06,Ready,Ready,Ready,Completed,Low,None,Team B
+DEP-015,South India,Production,Deployment Readiness,2026-11-08,At Risk,Ready,Pending,In Progress,Medium,Hardware dependency,Team D
