@@ -2,7 +2,9 @@
 
 An AI-assisted operations intelligence prototype designed to monitor deployment readiness, identify operational risks and blockers, retrieve relevant operational knowledge, and provide decision-support insights.
 
-The project combines **structured deployment data, operational knowledge retrieval, rule-based decision support, and optional LLM integration** into an interactive Streamlit application.
+The project combines **structured deployment data, lightweight knowledge retrieval, rule-based decision support, and optional LLM integration** into an interactive Streamlit application.
+
+> **Note:** This project uses synthetic deployment data created for portfolio and demonstration purposes.
 
 ---
 
@@ -41,27 +43,27 @@ This prototype provides a centralized interface to analyze these signals and ans
                               │
                               ▼
                  ┌──────────────────────────┐
-                 │   Streamlit Application   │
+                 │   Streamlit Application  │
                  │                          │
-                 │ Overview Dashboard        │
-                 │ Deployment Analysis       │
-                 │ AI Copilot                │
+                 │ Overview Dashboard       │
+                 │ Deployment Analysis      │
+                 │ AI Copilot               │
                  └────────────┬─────────────┘
                               │
                 ┌─────────────┴─────────────┐
                 ▼                           ▼
      ┌────────────────────┐       ┌────────────────────┐
-     │ Structured Analysis│       │ Operational         │
-     │                    │       │ Knowledge Base      │
+     │ Structured Analysis│       │ Operational        │
+     │                    │       │ Knowledge Base     │
      │ KPIs               │       │                    │
-     │ Filters            │       │ Deployment Guide    │
-     │ Risk Analysis      │       │ Readiness Rules     │
-     │ Blockers           │       │ Operational Actions │
+     │ Filters            │       │ Deployment Guide   │
+     │ Risk Analysis      │       │ Readiness Rules    │
+     │ Blockers           │       │ Operational Actions│
      └──────────┬─────────┘       └──────────┬─────────┘
                 │                            │
                 │                            ▼
                 │                 ┌────────────────────┐
-                │                 │ RAG Retrieval       │
+                │                 │ Knowledge Retrieval │
                 │                 │ Engine              │
                 │                 └──────────┬─────────┘
                 │                            │
@@ -93,8 +95,7 @@ Key metrics include:
 * Overall Readiness
 * High Risk Deployments
 * Network Issues
-
----
+* Hardware Issues
 
 ### 🔎 Deployment Analysis
 
@@ -109,13 +110,11 @@ Interactive analysis of deployment records using:
 * Dependency Status
 * Owner
 
-Users can filter deployments and investigate specific readiness conditions.
-
----
+Users can filter deployment records and investigate specific readiness conditions.
 
 ### 🤖 AI Deployment Operations Copilot
 
-The Copilot allows users to ask operational questions in natural language.
+The Copilot allows users to ask operational questions using natural language.
 
 Example questions:
 
@@ -135,11 +134,11 @@ Which deployments have network readiness issues?
 What should be checked before deployment?
 ```
 
-The system analyzes the deployment dataset and provides structured operational insights.
+The system combines deployment information with operational knowledge and provides structured operational insights.
 
 ---
 
-## 🧠 RAG-Assisted Knowledge Retrieval
+## 🧠 Knowledge Retrieval
 
 The project includes a lightweight retrieval component that searches an operational knowledge document based on the user's question.
 
@@ -154,7 +153,7 @@ The knowledge base contains information about:
 * Operational response procedures
 * AI-assisted decision support
 
-Retrieved knowledge is combined with structured deployment information before generating the Copilot response.
+Relevant knowledge sections are retrieved and combined with structured deployment information before generating the Copilot response.
 
 ### Retrieval Flow
 
@@ -172,23 +171,25 @@ Decision Support
 Operational Response
 ```
 
+> **Implementation note:** The current prototype uses lightweight keyword-based retrieval. Vector embeddings and semantic search are planned future enhancements.
+
 ---
 
 ## 🧩 AI / LLM Integration
 
 The project includes an optional LLM integration layer using the OpenAI API.
 
-When an API key with available usage is configured, the system can send the deployment context and retrieved operational knowledge to an LLM for response generation.
+When an API key with available usage is configured, the application can send deployment context and retrieved operational knowledge to an LLM for response generation.
 
 If LLM generation is unavailable, the application automatically uses a **rule-based operational response engine**.
 
-This fallback ensures that the prototype remains functional without requiring an active LLM API subscription.
+This fallback keeps the prototype functional without requiring an active LLM API subscription.
 
 ---
 
 ## 📈 Current Prototype Results
 
-The synthetic dataset contains:
+The synthetic dataset contains **15 deployment records**.
 
 | Metric            | Value |
 | ----------------- | ----: |
@@ -205,7 +206,7 @@ The synthetic dataset contains:
 
 ## 🛠️ Technology Stack
 
-### Frontend / Application
+### Application
 
 * Python
 * Streamlit
@@ -218,10 +219,12 @@ The synthetic dataset contains:
 
 ### AI & Knowledge Retrieval
 
-* Retrieval-Augmented Generation (RAG)
+* Retrieval-Augmented Generation (RAG) concepts
+* Knowledge retrieval
 * Large Language Models (LLMs)
 * OpenAI API integration
 * Rule-based decision support
+* Prompt Engineering
 
 ### Development
 
@@ -237,9 +240,11 @@ The synthetic dataset contains:
 AI-Deployment-Intelligence-Copilot/
 │
 ├── app/
+│   ├── .gitignore
 │   ├── main.py
 │   ├── rag_engine.py
-│   └── llm_engine.py
+│   ├── llm_engine.py
+│   └── copilot_engine.py
 │
 ├── data/
 │   └── deployment_data.csv
@@ -247,12 +252,8 @@ AI-Deployment-Intelligence-Copilot/
 ├── documents/
 │   └── deployment_operations_guide.txt
 │
-├── screenshots/
-│   └── executive-overview.png
-│
 ├── .gitignore
-├── README.md
-└── requirements.txt
+└── README.md
 ```
 
 ---
@@ -279,7 +280,7 @@ python -m venv .venv
 
 ### 4. Activate the environment
 
-Windows PowerShell:
+**Windows PowerShell:**
 
 ```powershell
 .venv\Scripts\Activate.ps1
@@ -287,8 +288,10 @@ Windows PowerShell:
 
 ### 5. Install dependencies
 
+Install the required packages:
+
 ```bash
-pip install -r requirements.txt
+pip install streamlit pandas openai python-dotenv
 ```
 
 ### 6. Run the application
@@ -303,7 +306,9 @@ The application will open in your browser.
 
 ## 🔐 Environment Variables
 
-For optional LLM functionality, create a `.env` file in the project root:
+LLM functionality is optional.
+
+To configure the OpenAI integration, create a `.env` file in the project root:
 
 ```text
 OPENAI_API_KEY=your_api_key_here
@@ -315,13 +320,13 @@ The project uses `.gitignore` to prevent accidental exposure of API credentials.
 
 ---
 
-## 📌 Important Note About Data
+## 📌 Data & Security Note
 
-This project uses **synthetic deployment data** created for portfolio and demonstration purposes.
+This project uses **synthetic deployment data** created specifically for portfolio and demonstration purposes.
 
 It does not contain confidential Microsoft, Azure, TCS, customer, or production deployment information.
 
-The operational knowledge document is also a demonstration knowledge base created for this prototype.
+The operational knowledge document is also a demonstration knowledge base created specifically for this prototype.
 
 ---
 
@@ -334,7 +339,9 @@ This project demonstrates practical experience with:
 * Pandas
 * Data Analysis
 * Dashboard Development
-* Risk & Readiness Analysis
+* Deployment Readiness Analysis
+* Risk & Blocker Analysis
+* Knowledge Retrieval
 * RAG Concepts
 * LLM Integration
 * Prompt Engineering
@@ -370,7 +377,7 @@ Potential future improvements include:
 B.Tech Computer Science & Engineering
 SRM Institute of Science and Technology
 
-GitHub: `https://github.com/Sumranverma`
+GitHub: https://github.com/Sumranverma
 
 ---
 
