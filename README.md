@@ -374,9 +374,6 @@ Potential future improvements include:
 
 **Sumran Verma**
 
-B.Tech Computer Science & Engineering
-SRM Institute of Science and Technology
-
 GitHub: https://github.com/Sumranverma
 
 ---
