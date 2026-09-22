@@ -1,0 +1,116 @@
+DEPLOYMENT OPERATIONS GUIDE
+
+1. DEPLOYMENT READINESS
+
+A deployment is considered Ready when the required infrastructure, network,
+hardware, and dependencies have been completed or validated.
+
+Key readiness areas:
+- Infrastructure readiness
+- Network readiness
+- Hardware readiness
+- Dependency completion
+- Deployment milestone completion
+
+A deployment should not be treated as fully ready when a critical dependency
+or readiness requirement is still pending.
+
+2. NETWORK READINESS
+
+Network readiness confirms that the required network configuration and
+validation activities have been completed.
+
+Common network issues include:
+- Network validation pending
+- Network dependency
+- Network readiness pending
+- Connectivity or configuration dependencies
+
+A deployment with pending network readiness should be monitored before
+deployment execution.
+
+3. HARDWARE READINESS
+
+Hardware readiness confirms that the required hardware infrastructure is
+available and has passed the required validation.
+
+Common hardware issues include:
+- Hardware dependency
+- Hardware readiness delay
+- Hardware validation pending
+
+Pending hardware readiness can prevent a deployment from reaching its
+final readiness milestone.
+
+4. DEPENDENCY STATUS
+
+Dependencies can have the following states:
+
+Completed:
+The required dependency has been completed.
+
+In Progress:
+The dependency is currently being worked on and requires monitoring.
+
+Blocked:
+The dependency is preventing the deployment from progressing.
+
+A blocked critical dependency should be treated as a deployment blocker.
+
+5. RISK LEVELS
+
+Low:
+No significant blocker is currently identified and readiness requirements
+are generally complete.
+
+Medium:
+The deployment has a condition that requires monitoring or follow-up.
+
+High:
+The deployment has a significant dependency, blocker, or readiness issue
+that may prevent timely deployment.
+
+6. OVERALL STATUS
+
+Ready:
+The deployment has completed the major readiness requirements.
+
+At Risk:
+The deployment has one or more conditions that require attention before
+it can be considered fully ready.
+
+Blocked:
+A significant blocker or dependency is preventing deployment progress.
+
+7. OPERATIONAL RESPONSE
+
+For an At Risk deployment:
+- Identify the specific readiness gap.
+- Identify the responsible owner.
+- Monitor the dependency.
+- Track the expected resolution.
+- Reassess readiness after the issue is resolved.
+
+For a Blocked deployment:
+- Identify the blocking dependency.
+- Identify the responsible owner.
+- Escalate the issue when required.
+- Track resolution progress.
+- Revalidate deployment readiness after resolution.
+
+8. AI ASSISTED DECISION SUPPORT
+
+An operations copilot can combine structured deployment data with operational
+knowledge to answer questions such as:
+
+- Which deployments are currently at risk?
+- Which deployments are blocked?
+- What are the major blockers?
+- Which regions have readiness concerns?
+- Why is a deployment at risk?
+- What should be checked before deployment?
+- Which dependencies require attention?
+- What operational actions can be considered?
+
+AI-generated recommendations should be treated as decision support and should
+be validated against the underlying deployment information.
