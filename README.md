@@ -138,6 +138,22 @@ The system combines deployment information with operational knowledge and provid
 
 ---
 
+## 📸 Application Screenshots
+
+### Deployment Overview
+
+![Deployment Overview](screenshots/executive-overview.png)
+
+### Deployment Analysis
+
+![Deployment Analysis](screenshots/deployment-analysis.png)
+
+### AI Operations Copilot
+
+![AI Operations Copilot](screenshots/ai-copilot.png)
+
+---
+
 ## 🧠 Knowledge Retrieval
 
 The project includes a lightweight retrieval component that searches an operational knowledge document based on the user's question.
@@ -240,7 +256,6 @@ The synthetic dataset contains **15 deployment records**.
 AI-Deployment-Intelligence-Copilot/
 │
 ├── app/
-│   ├── .gitignore
 │   ├── main.py
 │   ├── rag_engine.py
 │   ├── llm_engine.py
@@ -252,7 +267,13 @@ AI-Deployment-Intelligence-Copilot/
 ├── documents/
 │   └── deployment_operations_guide.txt
 │
+├── screenshots/
+│   ├── executive-overview.png
+│   ├── deployment-analysis.png
+│   └── ai-copilot.png
+│
 ├── .gitignore
+├── requirements.txt
 └── README.md
 ```
 
@@ -263,7 +284,7 @@ AI-Deployment-Intelligence-Copilot/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Sumranverma/AI-Deployment-Intelligence-Copilot.git
+git clone <repository-url>
 ```
 
 ### 2. Navigate to the project
@@ -288,10 +309,8 @@ python -m venv .venv
 
 ### 5. Install dependencies
 
-Install the required packages:
-
 ```bash
-pip install streamlit pandas openai python-dotenv
+pip install -r requirements.txt
 ```
 
 ### 6. Run the application
@@ -374,10 +393,11 @@ Potential future improvements include:
 
 **Sumran Verma**
 
-GitHub: https://github.com/Sumranverma
+GitHub: Sumranverma
 
 ---
 
 ## ⭐ Project Purpose
 
 This project was developed as a portfolio prototype to demonstrate how **AI, data analytics, knowledge retrieval, and operational intelligence** can be combined into a practical deployment-readiness solution.
+
